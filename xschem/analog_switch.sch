@@ -3,7 +3,7 @@ v {xschem version=3.4.5 file_version=1.2
 G {}
 K {}
 V {}
-S {Target 1mA switching current}
+S {w_swfets=16}
 E {}
 T {half size transistors for glitch compensation} 570 -330 0 0 0.4 0.4 {}
 N -180 160 -180 190 {
@@ -119,14 +119,14 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 260 10 1 0 {name=M1
 L=0.5
-W=16
+W=w_swfet
 nf=1 mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 260 260 1 1 {name=M3
 L=0.5
-W=16
+W=w_swfet
 nf=1 mult=1
 model=pfet_g5v0d10v5
 spiceprefix=X
@@ -143,14 +143,14 @@ C {devices/lab_wire.sym} -180 50 0 0 {name=p9 sig_type=std_logic lab=vdd
 C {devices/lab_wire.sym} -180 220 0 0 {name=p10 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 460 -340 1 0 {name=M2
 L=0.5
-W=8
+W=w_swfet/2
 nf=1 mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 460 -90 1 1 {name=M4
 L=0.5
-W=8
+W=w_swfet/2
 nf=1 mult=1
 model=pfet_g5v0d10v5
 spiceprefix=X
