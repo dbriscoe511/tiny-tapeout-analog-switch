@@ -12,13 +12,13 @@ set VSS 0
 set vdd 1
 set LOAD_ON 0
 set SW_ON 0
-set SW+ sw_v
+set SW_PLUS 0.5
 s eval_time
 set SW_ON 1
 s eval_time
 set SW_ON 0
 s eval_time
-set LOAD_ON 2
+set LOAD_ON 1
 s 1
 set SW_ON 1
 s eval_time - 1

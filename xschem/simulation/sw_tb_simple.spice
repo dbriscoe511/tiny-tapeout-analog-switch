@@ -1,0 +1,56 @@
+** sch_path: /home/ttuser/Desktop/proj/tiny-tapeout-analog-switch/xschem/sw_tb_simple.sch
+**.subckt sw_tb_simple
+R1 SW_MINUS VSS 4k m=1
+x1 vdd VSS SW_ON SW_PLUS SW_MINUS analog_switch
+V1 vdd VSS 1.8
+V2 SW_ON VSS 1.8
+V4 SW_PLUS VSS 1.8
+**** begin user architecture code
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+
+.options gmin=1e-12 abstol=1e-12 reltol=1e-3
+.options method=gear
+.options maxord=2
+R_SW_ON sw_on x1.nsw_on 1
+R_LOAD sw_minus 0 1MEG
+.control
+.IC V(sw_on)=1.8 V(sw_plus)=1.8 V(sw_minus)=0
+tran 100p 200n uic
+write testbench.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  analog_switch.sym # of pins=5
+** sym_path: /home/ttuser/Desktop/proj/tiny-tapeout-analog-switch/xschem/analog_switch.sym
+** sch_path: /home/ttuser/Desktop/proj/tiny-tapeout-analog-switch/xschem/analog_switch.sch
+.subckt analog_switch vdd vss SW_ON SW_PLUS SW_MINUS
+*.iopin vdd
+*.iopin vss
+*.ipin SW_ON
+*.iopin SW_PLUS
+*.iopin SW_MINUS
+XM5 nSW_ON SW_ON vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM9 nSW_ON SW_ON vdd vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 SW_MINUS SW_ON SW_PLUS SW_PLUS sky130_fd_pr__nfet_g5v0d10v5 L=15 W=16 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 SW_PLUS nSW_ON SW_MINUS SW_MINUS sky130_fd_pr__pfet_g5v0d10v5 L=15 W=16 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 SW_MINUS nSW_ON SW_MINUS SW_MINUS sky130_fd_pr__nfet_g5v0d10v5 L=15 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 SW_MINUS SW_ON SW_MINUS SW_MINUS sky130_fd_pr__pfet_g5v0d10v5 L=15 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end
