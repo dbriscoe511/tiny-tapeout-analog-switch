@@ -1,0 +1,32 @@
+
+unit n
+voltage VCC
+slope 1
+format hspice_simple
+
+param eval_time 1000
+param sw_v 0.5
+
+beginfile stimuli_tb_analog_switch.cir
+set VSS 0
+set vdd 1
+set LOAD_ON 0
+set SW_ON 0
+set SW+ sw_v
+s eval_time
+set SW_ON 1
+s eval_time
+set SW_ON 0
+s eval_time
+set LOAD_ON 2
+s 1
+set SW_ON 1
+s eval_time - 1
+set SW_ON 0
+s eval_time
+
+
+
+endfile
+
+
