@@ -3,10 +3,9 @@
 * generated from 
 ************************************** 
 
-VSW_ON SW_ON 0 PWL 0n 0 1000n 0 1001n VCC 2000n VCC 2001n 0 3001n 
-+0 3002n VCC 4001n VCC 4002n 0 
-VLOAD_ON LOAD_ON 0 PWL 0n 0 3000n 0 3001n VCC 
-Vvdd vdd 0 PWL 0n VCC 
+VSW_ON SW_ON 0 PWL 0n 0 1000n 0 1001n 1.8 2000n 1.8 2001n 0 3001n 
++0 3002n 1.8 4001n 1.8 4002n 0 
+Vvdd vdd 0 PWL 0n 1.8 
 VSW_PLUS SW_PLUS 0 PWL 0n 0.5 
 VVSS VSS 0 PWL 0n 0 
 

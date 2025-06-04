@@ -3,7 +3,7 @@
 R1 SW_MINUS VSS 4k m=1
 x1 vdd VSS SW_ON SW_PLUS SW_MINUS analog_switch
 V1 vdd VSS 1.8
-V2 SW_ON VSS 1.8
+V2 SW_ON VSS PULSE(0
 V4 SW_PLUS VSS 1.8
 **** begin user architecture code
 
