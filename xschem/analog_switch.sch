@@ -12,8 +12,6 @@ N -290 -140 -210 -140 {
 lab=vss}
 N -210 -140 -200 -140 {
 lab=vss}
-N -260 80 -260 120 {
-lab=SW_ON_BUF}
 N 90 130 200 130 {
 lab=SW_MINUS}
 N 200 30 200 130 {
@@ -112,28 +110,10 @@ N 540 -320 540 -220 {
 lab=SW_MINUS}
 N 400 -150 400 -110 {
 lab=SW_MINUS}
-N 400 -150 535 -150 {
-lab=SW_MINUS}
 N 540 -135 540 -110 {
 lab=SW_MINUS}
 N 540 -150 540 -135 {
 lab=SW_MINUS}
-N 525 -150 540 -150 {
-lab=SW_MINUS}
-N 410 40 410 140 {
-lab=SW_PLUS}
-N -455 280 -55 280 {
-lab=nSW_ON}
-N 595 -225 595 40 {
-lab=SW_MINUS}
-N 540 -225 595 -225 {
-lab=SW_MINUS}
-N -290 130 -260 130 {
-lab=SW_ON_BUF}
-N -260 120 -260 130 {
-lab=SW_ON_BUF}
-N -660 -15 -255 -20 {
-lab=SW_ON_BUF}
 N 400 -220 400 -150 {
 lab=SW_MINUS}
 N -180 160 -180 190 {
@@ -154,14 +134,14 @@ N -180 190 -180 220 {
 lab=vss}
 N -180 120 -80 120 {
 lab=nSW_ON}
-N -85 280 -80 120 {
-lab=nSW_ON}
-N -260 85 -255 -20 {
-lab=SW_ON_BUF}
-N 200 -145 200 30 {
-lab=SW_MINUS}
 N 200 -150 200 -140 {
 lab=SW_MINUS}
+N -285 130 -260 130 {}
+N -260 -20 -260 80 {}
+N -80 120 -80 280 {}
+N -80 280 -60 280 {}
+N 540 -220 540 -150 {}
+N 200 -140 200 30 {}
 C {devices/iopin.sym} -200 -180 0 0 {name=p1 lab=vdd}
 C {devices/iopin.sym} -200 -140 0 0 {name=p2 lab=vss
 }
