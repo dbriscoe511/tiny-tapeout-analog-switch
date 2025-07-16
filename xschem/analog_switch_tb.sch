@@ -7,7 +7,7 @@ S {}
 E {}
 B 2 1190 -490 1990 -90 {flags=graph
 y1=0
-y2=2
+y2=3.5
 ypos1=0
 ypos2=2
 divy=5
@@ -29,7 +29,7 @@ logy=0
 }
 B 2 1190 -920 1990 -520 {flags=graph
 y1=0
-y2=2
+y2=3.5
 ypos1=0
 ypos2=2
 divy=5
@@ -42,8 +42,9 @@ subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="sw_plus
-sw_minus"
-color="5 6"
+sw_minus
+vdd"
+color="5 6 7"
 dataset=-1
 unitx=1
 logx=0
@@ -88,13 +89,13 @@ C {devices/code.sym} 65 -470 0 0 {name=stimuli only_toplevel=false value="*.opti
 .options method=gear
 .options maxord=2
 .param VCCgauss = agauss(1.8,0.5,1)
-.param VCC = VCCgauss
+.param VCC = 3
 .option temp = aguass(40,30,1)
 .include stimuli_tb_analog_switch.cir
 .control
 	option seed = 69
 	let run = 0
-	dowhile run <= 10
+	dowhile run <= 1
 		save all
 		tran 1n 8u uic
 		remzerovec

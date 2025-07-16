@@ -3,9 +3,9 @@
 * generated from 
 ************************************** 
 
-VSW_ON SW_ON 0 PWL 0n 0 1000n 0 1001n 1.8 2000n 1.8 2001n 0 3001n 
-+0 3002n 1.8 4001n 1.8 4002n 0 
-Vvdd vdd 0 PWL 0n 1.8 
+VSW_ON SW_ON 0 PWL 0n 0 1000n 0 1001n 3.3 2000n 3.3 2001n 0 3001n 
++0 3002n 3.3 4001n 3.3 4002n 0 
+Vvdd vdd 0 PWL 0n 3.3 
 VSW_PLUS SW_PLUS 0 PWL 0n 0.5 
 VVSS VSS 0 PWL 0n 0 
 
