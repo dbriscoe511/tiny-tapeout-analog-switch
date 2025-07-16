@@ -29,7 +29,7 @@ logy=0
 }
 B 2 1190 -1230 1990 -830 {flags=graph
 y1=0
-y2=2
+
 ypos1=0
 ypos2=2
 divy=5
@@ -41,13 +41,13 @@ divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node=""
-color=""
+node=vdd
+color=6
 dataset=-1
 unitx=1
 logx=0
 logy=0
-}
+y2=3.5}
 N 915 -195 915 -145 {
 lab=VSS}
 N 865 -360 915 -360 {
@@ -107,7 +107,7 @@ write testbench.raw
 .endc
 "}
 C {analog_switch.sym} 715 -390 0 0 {name=x1}
-C {devices/vsource.sym} 370 -540 0 0 {name=V1 value=1.8 savecurrent=false}
+C {devices/vsource.sym} 370 -540 0 0 {name=V1 value=3 savecurrent=false}
 C {devices/lab_pin.sym} 405 -510 0 1 {name=p9 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 405 -570 0 1 {name=p10 lab=vdd}
 C {devices/vsource.sym} 270 -540 0 0 {name=V2 value=1.8 savecurrent=false}
